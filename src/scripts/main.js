@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     e.preventDefault()
     chamadaApi()
     
-    hide.classList.remove('conteudo__resultado--hidde')
+    
   })
 });
 
@@ -26,7 +26,6 @@ function chamadaApi() {
     })
     .then(function(json){
         //seletores da api 
-        console.log(json.wind.speed)
         const apiCidade = json.name
         const apiflag = json.sys.country
         const apiTemp = Math.floor(json.main.temp)
@@ -54,6 +53,16 @@ function chamadaApi() {
         tempoIcon.setAttribute('src', `https://openweathermap.org/img/wn/${apiTempoIcon}@2x.png`)
         humidade.textContent = `${apiHumidade}%`
         velocidade.textContent =`${apiVelocidade} Km/h`
+
+        document.querySelector('#icon-buscar').classList.add('d-none')
+        document.querySelector('#icon-load').classList.remove('d-none')
         
+    }).finally(function (json) {
+        setTimeout(function () {
+        document.querySelector('#icon-buscar').classList.remove('d-none')
+        document.querySelector('#icon-load').classList.add('d-none')
+        document.getElementById('resultado').classList.remove('conteudo__resultado--hidde')
+
+        }, 1500)
     })
 }

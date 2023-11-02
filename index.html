@@ -5,9 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Previsão do Tempo</title>
+    <link rel="shortcut icon" href="dist/imagess/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="dist/styles/main.css">
 </head>
 
@@ -16,30 +19,39 @@
         <form class="conteudo__form">
             <div class="container-form">
                 <input id="cidade" class="conteudo__form__cidade" type="text" placeholder="Busque por uma Cidade" autocomplete="off">
-                <button id="btn-buscar" class="conteudo__form__btn" type="submit"><ion-icon name="search-outline"></ion-icon></button>
+                <button id="btn-buscar" class="conteudo__form__btn" type="submit">
+                    <i id="icon-buscar" class="bi bi-search "></i>
+                    <div id="icon-load" class="text-center d-none">
+                        <div class="spinner-border" role="status">
+                          <span class="visually-hidden">Loading...</span>
+                        </div>
+                      </div>
+                </button>
             </div>
         </form>
+
         <div id="resultado" class="conteudo__resultado conteudo__resultado--hidde">
             <div class="conteudo__resultado__local">
-                <ion-icon name="compass"></ion-icon><span id="reposta-cidade">Santa vitoria</span><span><img id="flag" src="" alt="bandeira"></span>
+                <i class="bi bi-geo-alt-fill"></i><span id="reposta-cidade">--</span><span><img id="flag" src="" alt="bandeira"></span>
             </div>
             <div class="conteudo__resultado__graus">
-                <span id="graus">38c</span>
+                <span id="graus">--</span>
             </div>
             <div class="conteudo__resultado__previsão">
                 <img id="tempo-icon" src="" alt="tempo icone">
-                <span id="tempo">Nublado</span>
+                <span id="tempo">--</span>
             </div>
             <div class="conteudo__resultado__outros">
                 <div class="conteudo__resultado__outros__humidade">
-                    <ion-icon name="water"></ion-icon><span id="humidade">48%</span>
+                    <i class="bi bi-droplet-fill"></i></ion-icon><span id="humidade">--%</span>
                 </div>
                 <div class="conteudo__resultado__outros__velocidade">
-                    <ion-icon name="leaf"></ion-icon><span id="velocidade">3Km/h</span>
+                    <i class="bi bi-wind"></i><span id="velocidade">--</span>
                 </div>
             </div>
         </div>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="dist/scripts/main.js"></script>
