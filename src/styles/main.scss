@@ -1,4 +1,21 @@
-body{
-    background-color: red;
-    color: white;
+@use 'form';
+@use 'resultado';
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+  color: #fff;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  background-image: url(https://source.unsplash.com/1600x900/?landscape);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

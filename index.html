@@ -1,12 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Previsão do Tempo</title>
-    <link rel="stylesheet" href="./dist/styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dist/styles/main.css">
 </head>
+
 <body>
-    <h1>Ola mundo</h1>
+    <main class="conteudo">
+        <form class="conteudo__form">
+            <div class="container-form">
+                <input id="cidade" class="conteudo__form__cidade" type="text" placeholder="Busque por uma Cidade" autocomplete="off">
+                <button id="btn-buscar" class="conteudo__form__btn" type="submit"><ion-icon name="search-outline"></ion-icon></button>
+            </div>
+        </form>
+        <div id="resultado" class="conteudo__resultado conteudo__resultado--hidde">
+            <div class="conteudo__resultado__local">
+                <ion-icon name="compass"></ion-icon><span id="reposta-cidade">Santa vitoria</span><span><img id="flag" src="" alt="bandeira"></span>
+            </div>
+            <div class="conteudo__resultado__graus">
+                <span id="graus">38c</span>
+            </div>
+            <div class="conteudo__resultado__previsão">
+                <img id="tempo-icon" src="" alt="tempo icone">
+                <span id="tempo">Nublado</span>
+            </div>
+            <div class="conteudo__resultado__outros">
+                <div class="conteudo__resultado__outros__humidade">
+                    <ion-icon name="water"></ion-icon><span id="humidade">48%</span>
+                </div>
+                <div class="conteudo__resultado__outros__velocidade">
+                    <ion-icon name="leaf"></ion-icon><span id="velocidade">3Km/h</span>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="src/scripts/main.js"></script>
 </body>
+
 </html>
